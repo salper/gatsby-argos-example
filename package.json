@@ -1,9 +1,7 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "gatsby-argos-example",
+  "description": "A simple gatsby with argos configured example.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "gatsby": "^2.15.29",
     "gatsby-image": "^2.2.24",
@@ -19,25 +17,39 @@
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
+    "argos-cli": "^0.1.2",
+    "babel-jest": "^24.9.0",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-react": "^7.16.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.9.0",
     "prettier": "^1.18.2"
   },
   "keywords": [
-    "gatsby"
+    "argos",
+    "gatsby",
+    "example"
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
+    "argos": "argos upload screenshots --branch $TRAVIS_BRANCH --commit $TRAVIS_COMMIT --token $ARGOS_TOKEN",
+    "build": "cross-env NODE_ENV=production gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint": "yarn prettier --check '**/*.{js,jsx,json,md}' && eslint .",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing \""
+    "test": "cross-env NODE_ENV=test jest --passWithNoTests"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/salper/gatsby-argos-example"
   },
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/salper/gatsby-argos-example/issues"
   }
 }

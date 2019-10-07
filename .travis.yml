@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - node
+before_script:
+  - bash -c 'cd plugins/gatsby-plugin-screenshot && yarn'
+script:
+  - yarn lint
+  - yarn test
+  - yarn build
+  - yarn argos
