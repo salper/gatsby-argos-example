@@ -30,7 +30,12 @@ module.exports = {
     ...(process.env.CI
       ? [
           {
-            resolve: `./plugins/gatsby-plugin-screenshot`,
+            resolve: `gatsby-plugin-argos`,
+            options: {
+              branch: process.env.TRAVIS_BRANCH,
+              commit: process.env.TRAVIS_COMMIT,
+              token: process.env.ARGOS_TOKEN,
+            },
           },
         ]
       : []),
